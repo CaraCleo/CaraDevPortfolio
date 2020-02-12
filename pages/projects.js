@@ -4,6 +4,17 @@ import Layout from '../components/Layout.js';
 export default function Projects() {
     return (
         <Layout>
+        <head>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158288853-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-158288853-1');
+            </script>
+         </head>
         <div>
             <div className="projOne">
                 <h1>Developer Projects</h1>

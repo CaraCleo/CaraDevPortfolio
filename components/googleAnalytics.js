@@ -1,5 +1,5 @@
 // googleAnalytics.js
-//'UA-148580530-1'
+//'UA-158332532-1'
   
 import ReactGA from "react-ga"
   

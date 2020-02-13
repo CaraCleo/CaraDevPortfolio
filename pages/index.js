@@ -4,17 +4,7 @@ import Layout from '../components/Layout.js';
 export default function Index() {
     return (
         <Layout>
-        <head>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158288853-1"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
 
-              gtag('config', 'UA-158288853-1');
-            </script>
-         </head>
         <div className="divOne">
             <h1>Hello! My name is Cara Spall.</h1>
             <div className="imgDiv">

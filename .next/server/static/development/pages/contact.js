@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/caraspall/Desktop/task8-nextapp/components/Header.js";
+var _jsxFileName = "C:\\Users\\nkosi\\Downloads\\cara\\CaraDevPortfolio\\components\\Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -191,35 +191,79 @@ const Header = () => __jsx("div", {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-var _jsxFileName = "/Users/caraspall/Desktop/task8-nextapp/components/Layout.js";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Layout; });
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _googleAnalytics_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./googleAnalytics.js */ "./components/googleAnalytics.js");
+var _jsxFileName = "C:\\Users\\nkosi\\Downloads\\cara\\CaraDevPortfolio\\components\\Layout.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ //Google analytics:
+
 
 const layoutStyle = {
   margin: 20,
   padding: 20,
   border: '1px solid #DDD'
+}; //I have used some bootstrap elements in my portfolio, hence why I linked to them in the head section
+
+class Layout extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  componentDidMount() {
+    if (!window.GA_INITIALIZED) {
+      Object(_googleAnalytics_js__WEBPACK_IMPORTED_MODULE_2__["initGA"])();
+      window.GA_INITIALIZED = true;
+    }
+
+    Object(_googleAnalytics_js__WEBPACK_IMPORTED_MODULE_2__["logPageView"])();
+  }
+
+  render() {
+    return __jsx("div", {
+      style: layoutStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }), this.props.children);
+  }
+
+}
+
+/***/ }),
+
+/***/ "./components/googleAnalytics.js":
+/*!***************************************!*\
+  !*** ./components/googleAnalytics.js ***!
+  \***************************************/
+/*! exports provided: initGA, logPageView */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initGA", function() { return initGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logPageView", function() { return logPageView; });
+/* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-ga */ "react-ga");
+/* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_ga__WEBPACK_IMPORTED_MODULE_0__);
+// googleAnalytics.js
+//'UA-148580530-1'
+
+const initGA = () => {
+  react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.initialize("UA-148580530-1");
 };
-
-const Layout = props => __jsx("div", {
-  style: layoutStyle,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10
-  },
-  __self: undefined
-}, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11
-  },
-  __self: undefined
-}), props.children);
-
-/* harmony default export */ __webpack_exports__["default"] = (Layout);
+const logPageView = () => {
+  react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.set({
+    page: window.location.pathname
+  });
+  react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.pageview(window.location.pathname);
+};
 
 /***/ }),
 
@@ -2031,7 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Layout_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout.js */ "./components/Layout.js");
-var _jsxFileName = "/Users/caraspall/Desktop/task8-nextapp/pages/contact.js";
+var _jsxFileName = "C:\\Users\\nkosi\\Downloads\\cara\\CaraDevPortfolio\\pages\\contact.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -2121,19 +2165,19 @@ function Contact() {
   }, "caraspall389@gmail.com")), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2438293005",
     __self: this
-  }, "div.jsx-2438293005{background-color:azure;border:solid;text-align:center;}img.jsx-2438293005{height:auto;width:10%;}a.jsx-2438293005{border:solid;margin-left:5px;margin-top:10px;background-color:white;}.phone.jsx-2438293005{background-color:lavender;margin-left:5px;margin-right:5px;margin-top:5px;margin-bottom:5px;}.email.jsx-2438293005{background-color:mistyrose;margin-left:5px;margin-right:5px;margin-top:5px;margin-bottom:5px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jYXJhc3BhbGwvRGVza3RvcC90YXNrOC1uZXh0YXBwL3BhZ2VzL2NvbnRhY3QuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbUJpQixBQUc0QyxBQUtYLEFBSUMsQUFNYSxBQU9DLFlBaEJqQixDQUlNLFNBSHBCLENBTmlCLEdBZUcsQ0FPQSxFQVpBLE9BVEUsTUFlRCxDQU9BLEVBWk0sU0FUM0IsS0FlbUIsQ0FPQSxRQVpuQixNQU9ELENBT0EsaUJBUEMsQ0FPQSIsImZpbGUiOiIvVXNlcnMvY2FyYXNwYWxsL0Rlc2t0b3AvdGFzazgtbmV4dGFwcC9wYWdlcy9jb250YWN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IExpbmsgZnJvbSAnbmV4dC9saW5rJztcbmltcG9ydCBMYXlvdXQgZnJvbSAnLi4vY29tcG9uZW50cy9MYXlvdXQuanMnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBDb250YWN0KCkge1xuICAgIHJldHVybiAoXG4gICAgPExheW91dD5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxoMT5Db250YWN0IE1lOjwvaDE+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInBob25lXCI+XG4gICAgICAgICAgICA8aDM+UGhvbmU6PC9oMz5cbiAgICAgICAgICAgIDxpbWcgc3JjPVwiL3N0YXRpYy9QaG9uZUljb24ucG5nXCIgYWx0PVwiUGhvbmUgaWNvblwiPjwvaW1nPlxuICAgICAgICAgICAgPHA+KzI2NCA4MSA0NDEgNjAxMTwvcD5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJlbWFpbFwiPlxuICAgICAgICAgICAgPGgzPkVtYWlsOjwvaDM+XG4gICAgICAgICAgICA8aW1nIHNyYz1cIi9zdGF0aWMvRW1haWxJY29uLnBuZ1wiIGFsdD1cIkVtYWlsIGljb25cIj48L2ltZz5cbiAgICAgICAgICAgIDxwPmNhcmFzcGFsbDM4OUBnbWFpbC5jb208L3A+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxzdHlsZSBqc3g+XG4gICAgICAgICAgICAgICAge2BcbiAgICAgICAgICAgICAgICBkaXYge1xuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBhenVyZTtcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiBzb2xpZDtcbiAgICAgICAgICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBpbWcge1xuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiAxMCU7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGEge1xuICAgICAgICAgICAgICAgICAgICBib3JkZXI6IHNvbGlkO1xuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogNXB4O1xuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiAxMHB4O1xuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgLnBob25lIHtcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiA1cHg7XG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1yaWdodDogNXB4O1xuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiA1cHg7XG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDVweFxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAuZW1haWwge1xuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBtaXN0eXJvc2U7XG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiA1cHg7XG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1yaWdodDogNXB4O1xuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiA1cHg7XG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDVweFxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBgfVxuICAgICAgICAgICAgPC9zdHlsZT5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvTGF5b3V0PlxuICAgICk7XG59Il19 */\n/*@ sourceURL=/Users/caraspall/Desktop/task8-nextapp/pages/contact.js */")));
+  }, "div.jsx-2438293005{background-color:azure;border:solid;text-align:center;}img.jsx-2438293005{height:auto;width:10%;}a.jsx-2438293005{border:solid;margin-left:5px;margin-top:10px;background-color:white;}.phone.jsx-2438293005{background-color:lavender;margin-left:5px;margin-right:5px;margin-top:5px;margin-bottom:5px;}.email.jsx-2438293005{background-color:mistyrose;margin-left:5px;margin-right:5px;margin-top:5px;margin-bottom:5px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcbmtvc2lcXERvd25sb2Fkc1xcY2FyYVxcQ2FyYURldlBvcnRmb2xpb1xccGFnZXNcXGNvbnRhY3QuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbUJpQixBQUc0QyxBQUtYLEFBSUMsQUFNYSxBQU9DLFlBaEJqQixDQUlNLFNBSHBCLENBTmlCLEdBZUcsQ0FPQSxFQVpBLE9BVEUsTUFlRCxDQU9BLEVBWk0sU0FUM0IsS0FlbUIsQ0FPQSxRQVpuQixNQU9ELENBT0EsaUJBUEMsQ0FPQSIsImZpbGUiOiJDOlxcVXNlcnNcXG5rb3NpXFxEb3dubG9hZHNcXGNhcmFcXENhcmFEZXZQb3J0Zm9saW9cXHBhZ2VzXFxjb250YWN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IExpbmsgZnJvbSAnbmV4dC9saW5rJztcclxuaW1wb3J0IExheW91dCBmcm9tICcuLi9jb21wb25lbnRzL0xheW91dC5qcyc7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBDb250YWN0KCkge1xyXG4gICAgcmV0dXJuIChcclxuICAgIDxMYXlvdXQ+XHJcbiAgICAgICAgPGRpdj5cclxuICAgICAgICAgICAgPGgxPkNvbnRhY3QgTWU6PC9oMT5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJwaG9uZVwiPlxyXG4gICAgICAgICAgICA8aDM+UGhvbmU6PC9oMz5cclxuICAgICAgICAgICAgPGltZyBzcmM9XCIvc3RhdGljL1Bob25lSWNvbi5wbmdcIiBhbHQ9XCJQaG9uZSBpY29uXCI+PC9pbWc+XHJcbiAgICAgICAgICAgIDxwPisyNjQgODEgNDQxIDYwMTE8L3A+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImVtYWlsXCI+XHJcbiAgICAgICAgICAgIDxoMz5FbWFpbDo8L2gzPlxyXG4gICAgICAgICAgICA8aW1nIHNyYz1cIi9zdGF0aWMvRW1haWxJY29uLnBuZ1wiIGFsdD1cIkVtYWlsIGljb25cIj48L2ltZz5cclxuICAgICAgICAgICAgPHA+Y2FyYXNwYWxsMzg5QGdtYWlsLmNvbTwvcD5cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgIDxzdHlsZSBqc3g+XHJcbiAgICAgICAgICAgICAgICB7YFxyXG4gICAgICAgICAgICAgICAgZGl2IHtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBhenVyZTtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXI6IHNvbGlkO1xyXG4gICAgICAgICAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiAxMCU7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICBhIHtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXI6IHNvbGlkO1xyXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiA1cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIC5waG9uZSB7XHJcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogbGF2ZW5kZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IDVweDtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tcmlnaHQ6IDVweDtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogNXB4XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAuZW1haWwge1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IG1pc3R5cm9zZTtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogNXB4O1xyXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi1yaWdodDogNXB4O1xyXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi10b3A6IDVweDtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tYm90dG9tOiA1cHhcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIGB9XHJcbiAgICAgICAgICAgIDwvc3R5bGU+XHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC9MYXlvdXQ+XHJcbiAgICApO1xyXG59XHJcbiJdfQ== */\n/*@ sourceURL=C:\\\\Users\\\\nkosi\\\\Downloads\\\\cara\\\\CaraDevPortfolio\\\\pages\\\\contact.js */")));
 }
 
 /***/ }),
 
-/***/ 5:
+/***/ 7:
 /*!********************************!*\
   !*** multi ./pages/contact.js ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/caraspall/Desktop/task8-nextapp/pages/contact.js */"./pages/contact.js");
+module.exports = __webpack_require__(/*! C:\Users\nkosi\Downloads\cara\CaraDevPortfolio\pages\contact.js */"./pages/contact.js");
 
 
 /***/ }),
@@ -2278,6 +2322,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-ga":
+/*!***************************!*\
+  !*** external "react-ga" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-ga");
 
 /***/ }),
 
